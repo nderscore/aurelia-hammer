@@ -11,5 +11,6 @@ define(['exports'], function (exports) {
     frameworkConfig.globalResources('./hammer-tap');
     frameworkConfig.globalResources('./hammer-press');
     frameworkConfig.globalResources('./hammer-hold');
+    frameworkConfig.globalResources('./hammer-longtap');
   }
 });

@@ -8,6 +8,7 @@ System.register([], function (_export) {
     frameworkConfig.globalResources('./hammer-tap');
     frameworkConfig.globalResources('./hammer-press');
     frameworkConfig.globalResources('./hammer-hold');
+    frameworkConfig.globalResources('./hammer-longtap');
   }
 
   return {
