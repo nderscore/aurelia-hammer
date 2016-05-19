@@ -20,7 +20,7 @@ System.register(['aurelia-framework', 'hammerjs'], function (_export) {
           _classCallCheck(this, _HammerLongTapCustomAttribute);
 
           this.hammer = new Hammer.Manager(element, {
-            recognizers: [[Hammer.Tap, { time: 1000, interval: 1 }]]
+            recognizers: [[Hammer.Tap], [Hammer.Press]]
           });
           this.element = element;
         }
@@ -29,11 +29,13 @@ System.register(['aurelia-framework', 'hammerjs'], function (_export) {
           key: 'attached',
           value: function attached() {
             this.hammer.on('tap', this.handleLongTap.bind(this));
+            this.hammer.on('press', this.handleLongTap.bind(this));
           }
         }, {
           key: 'detached',
           value: function detached() {
             this.hammer.off('tap', this.handleLongTap.bind(this));
+            this.hammer.off('press', this.handleLongTap.bind(this));
           }
         }, {
           key: 'valueChanged',

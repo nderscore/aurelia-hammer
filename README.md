@@ -8,8 +8,8 @@ It uses [HammerJS](http://hammerjs.github.io/) to detect the gesture.
 
 * **Swipe** - Captures left/right swipe gestures
 * **Tap** - Captures when the pointer is down for up to 250ms without movement and released
-* **LongTap** - Captures when the pointer is down for up to 1000ms without movement and released
 * **Press** - Captures when the pointer is down for 251ms without movement
+* **LongTap** - Captures tap and press events.
 * **Hold** - Captures when the pointer is down for 1000ms without movement
 
 ## Installation

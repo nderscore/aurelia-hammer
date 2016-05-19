@@ -21,7 +21,7 @@ var HammerLongTapCustomAttribute = (function () {
     _classCallCheck(this, _HammerLongTapCustomAttribute);
 
     this.hammer = new _hammerjs2['default'].Manager(element, {
-      recognizers: [[_hammerjs2['default'].Tap, { time: 1000, interval: 1 }]]
+      recognizers: [[_hammerjs2['default'].Tap], [_hammerjs2['default'].Press]]
     });
     this.element = element;
   }
@@ -30,11 +30,13 @@ var HammerLongTapCustomAttribute = (function () {
     key: 'attached',
     value: function attached() {
       this.hammer.on('tap', this.handleLongTap.bind(this));
+      this.hammer.on('press', this.handleLongTap.bind(this));
     }
   }, {
     key: 'detached',
     value: function detached() {
       this.hammer.off('tap', this.handleLongTap.bind(this));
+      this.hammer.off('press', this.handleLongTap.bind(this));
     }
   }, {
     key: 'valueChanged',

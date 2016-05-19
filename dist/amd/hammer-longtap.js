@@ -18,7 +18,7 @@ define(['exports', 'aurelia-framework', 'hammerjs'], function (exports, _aurelia
       _classCallCheck(this, _HammerLongTapCustomAttribute);
 
       this.hammer = new _Hammer['default'].Manager(element, {
-        recognizers: [[_Hammer['default'].Tap, { time: 1000, interval: 1 }]]
+        recognizers: [[_Hammer['default'].Tap], [_Hammer['default'].Press]]
       });
       this.element = element;
     }
@@ -27,11 +27,13 @@ define(['exports', 'aurelia-framework', 'hammerjs'], function (exports, _aurelia
       key: 'attached',
       value: function attached() {
         this.hammer.on('tap', this.handleLongTap.bind(this));
+        this.hammer.on('press', this.handleLongTap.bind(this));
       }
     }, {
       key: 'detached',
       value: function detached() {
         this.hammer.off('tap', this.handleLongTap.bind(this));
+        this.hammer.off('press', this.handleLongTap.bind(this));
       }
     }, {
       key: 'valueChanged',
