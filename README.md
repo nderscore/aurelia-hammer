@@ -4,10 +4,11 @@ This is a [Aurelia](http://www.aurelia.io/) plugin providing the `hammer-swipe` 
 
 It uses [HammerJS](http://hammerjs.github.io/) to detect the gesture.
 
-`swipe`, `tap`, `press`, and `hold` are the only gestures supported at the moment. If you need another, feel free to open an issue or send a PR.
+`swipe`, `tap`, `longtap`, `press`, and `hold` are the only gestures supported at the moment. If you need another, feel free to open an issue or send a PR.
 
 * **Swipe** - Captures left/right swipe gestures
-* **Tap** - Captures when the pointer is down for up to 250ms without movement
+* **Tap** - Captures when the pointer is down for up to 250ms without movement and released
+* **LongTap** - Captures when the pointer is down for up to 1000ms without movement and released
 * **Press** - Captures when the pointer is down for 251ms without movement
 * **Hold** - Captures when the pointer is down for 1000ms without movement
 
@@ -55,6 +56,20 @@ handleTap($event) {
 }
 ```
 
+## LongTap Usage
+
+In your View
+```html
+<div hammer-longtap.call="handleLongTap($event)">
+</div>
+```
+In your View Model
+```js
+handleLongTap($event) {
+  
+  // here you have $event.hammerEvent holding the original event from HammerJS.
+}
+```
 
 ## Press Usage
 

@@ -8,7 +8,7 @@ export class HammerLongTapCustomAttribute {
   constructor(element) {
     this.hammer = new Hammer.Manager(element, {
       recognizers: [
-        [Hammer.Tap, {time: 1000, interval: 1}]
+        [Hammer.Tap, {time: 1000, interval: 10}]
       ]
     });
     this.element = element;
